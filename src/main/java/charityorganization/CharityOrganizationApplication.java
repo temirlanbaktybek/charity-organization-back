@@ -8,6 +8,8 @@ public class CharityOrganizationApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CharityOrganizationApplication.class, args);
+
+		System.out.println("something");
 	}
 
 }
