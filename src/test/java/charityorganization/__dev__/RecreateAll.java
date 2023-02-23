@@ -6,7 +6,7 @@ public class RecreateAll {
 
     public static void main(String[] args) {
         try {
-            RecreateWorker.recreatePostgresDatabase("sandbox", "sandbox");
+            RecreateWorker.recreatePostgresDatabase("charity", "postgres");
         } catch (Exception e) {
             e.printStackTrace();
         }

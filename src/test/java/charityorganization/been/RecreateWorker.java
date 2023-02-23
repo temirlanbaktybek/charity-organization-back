@@ -10,8 +10,8 @@ public class RecreateWorker {
 
     public static void recreatePostgresDatabase(String dbName, String username) throws Exception {
         try (var connection = DriverManager.getConnection(
-                "jdbc:postgresql://localhost:47211/postgres",
-                "postgres", "111"
+                "jdbc:postgresql://localhost:10432/charity",
+                "postgres", ""
         )) {
 
             while (true) try (var statement = connection.createStatement()) {
