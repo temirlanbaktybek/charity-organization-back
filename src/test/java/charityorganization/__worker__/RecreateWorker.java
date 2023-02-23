@@ -1,4 +1,4 @@
-package charityorganization.been;
+package charityorganization.__worker__;
 
 import org.springframework.stereotype.Component;
 
@@ -9,10 +9,7 @@ import java.sql.SQLException;
 public class RecreateWorker {
 
     public static void recreatePostgresDatabase(String dbName, String username) throws Exception {
-        try (var connection = DriverManager.getConnection(
-                "jdbc:postgresql://localhost:10432/charity",
-                "postgres", ""
-        )) {
+        try (var connection = DriverManager.getConnection("jdbc:postgresql://localhost:10432/charity", "postgres", "")) {
 
             while (true) try (var statement = connection.createStatement()) {
                 statement.execute("drop database " + dbName);
@@ -26,9 +23,7 @@ public class RecreateWorker {
 
                     // отконекчиваем всех, кто приконектился
                     try (var statement = connection.createStatement()) {
-                        statement.execute("SELECT pg_terminate_backend(pg_stat_activity.pid)\n" +
-                                "FROM pg_stat_activity\n" +
-                                "WHERE pg_stat_activity.datname = '" + dbName + "'");
+                        statement.execute("SELECT pg_terminate_backend(pg_stat_activity.pid)\n" + "FROM pg_stat_activity\n" + "WHERE pg_stat_activity.datname = '" + dbName + "'");
                     }
 
                     //дропаем БД ещё раз

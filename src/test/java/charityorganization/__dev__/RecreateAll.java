@@ -1,6 +1,6 @@
 package charityorganization.__dev__;
 
-import charityorganization.been.RecreateWorker;
+import charityorganization.__worker__.RecreateWorker;
 
 public class RecreateAll {
 
